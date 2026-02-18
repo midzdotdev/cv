@@ -1,5 +1,5 @@
 {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "James-Yu.latex-workshop",
-    "latex-workshop.formatting.latex": "tex-fmt"
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "James-Yu.latex-workshop",
+  "latex-workshop.formatting.latex": "tex-fmt"
 }
