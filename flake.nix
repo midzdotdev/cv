@@ -31,6 +31,15 @@
     };
   in
   {
+    apps = forAllSystems (pkgs: {
+      format = {
+        type = "app";
+        program = toString (pkgs.writeShellScript "format-tex" ''
+          ${pkgs.findutils}/bin/find . -name '*.tex' -not -path './.git/*' -exec ${pkgs.tex-fmt}/bin/tex-fmt {} +
+        '');
+      };
+    });
+
     devShells = forAllSystems (pkgs: {
       default = pkgs.mkShell {
         packages = [

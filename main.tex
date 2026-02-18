@@ -41,7 +41,8 @@
 
 % Some settings:
 \raggedright
-\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before
+% adjustwidth environment
 \pagestyle{fancy} % no header or footer
 \fancyhead{} % clear header and footer
 \renewcommand{\headrulewidth}{0pt}
@@ -49,7 +50,8 @@
 \setlength{\parindent}{0pt} % no indentation
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0.15cm} % set column seperation
-\pagenumbering{arabic} % keep internal page counter incrementing for unique PDF anchors
+\pagenumbering{arabic} % keep internal page counter incrementing for
+% unique PDF anchors
 \cfoot{}                % hide the actual page number from output
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
@@ -65,7 +67,8 @@
   0.2 cm
 } % section title spacing
 
-\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom
+% bullet points
 \newenvironment{highlights}{
   \begin{itemize}[
         topsep=0.10 cm,
