@@ -11,25 +11,19 @@
   % showframe % for debugging
 ]{geometry} % for adjusting page geometry
 \usepackage{titlesec} % for customizing section titles
-\usepackage[dvipsnames]{xcolor} % for coloring text
-\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\usepackage{xcolor} % for coloring text
 \usepackage{enumitem} % for customizing lists
-\usepackage{fontawesome5} % for using icons
-\usepackage{amsmath} % for math
 \usepackage[
   pdftitle={James Middleton CV},
   pdfauthor={James Middleton},
   pdfcreator={LaTeX},
   colorlinks=true,
-  urlcolor=primaryColor
+  urlcolor=black
 ]{hyperref} % for links, metadata and bookmarks
-\usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
 \usepackage{bookmark} % for bookmarks
-\usepackage{lastpage} % for getting the total number of pages
 \usepackage{changepage} % for one column entries (adjustwidth environment)
 \usepackage{paracol} % for two and three column entries
-\usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
 \usepackage{fancyhdr} % for customizing the footer
@@ -93,9 +87,9 @@
   \end{adjustwidth}
 } % new environment for one column entries
 
-\newenvironment{twocolentry}[2][]{
+\newenvironment{twocolentry}[1]{
   \onecolentry
-  \def\secondColumn{#2}
+  \def\secondColumn{#1}
   \setcolumnwidth{\fill, 7 cm}
   \begin{paracol}{2}
   }{
@@ -110,10 +104,8 @@
   \par\kern\topsep
 } % new environment for the header
 
-% save the original href command in a new command:
+% alias used in the header for links without arrow decoration:
 \let\hrefWithoutArrow\href
-
-% new command for external links:
 
 \begin{document}
 
