@@ -37,6 +37,23 @@
           (texlive pkgs)
           pkgs.tex-fmt
         ];
+        shellHook = ''
+          if [ -d .git ]; then
+            mkdir -p .git/hooks
+            cat > .git/hooks/pre-commit << 'HOOK'
+          #!/usr/bin/env bash
+          staged_tex=$(git diff --cached --name-only --diff-filter=ACM | grep '\.tex$')
+          if [ -z "$staged_tex" ]; then
+            exit 0
+          fi
+          for file in $staged_tex; do
+            tex-fmt "$file"
+            git add "$file"
+          done
+          HOOK
+            chmod +x .git/hooks/pre-commit
+          fi
+        '';
       };
     });
   };
