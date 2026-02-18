@@ -49,7 +49,8 @@
 \setlength{\parindent}{0pt} % no indentation
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0.15cm} % set column seperation
-\pagenumbering{gobble} % no page numbering
+\pagenumbering{arabic} % keep internal page counter incrementing for unique PDF anchors
+\cfoot{}                % hide the actual page number from output
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
