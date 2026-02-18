@@ -26,7 +26,13 @@ sections/
 
 ### Prerequisites
 
-A [Nix](https://nixos.org/) dev shell provides all required tooling:
+A [Nix](https://nixos.org/) flake provides all required tooling. With [direnv](https://direnv.net/) installed, the dev shell activates automatically when you `cd` into the project:
+
+```sh
+direnv allow   # first time only
+```
+
+Or enter the shell manually:
 
 ```sh
 nix develop
@@ -45,7 +51,7 @@ latexmk -pdf main.tex
 
 ### Editing
 
-Use VSCode with the [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
+Use VSCode with the recommended extensions (prompted on first open, or install via the Extensions panel):
 
-- **Format on save** is enabled using `tex-fmt`
-- **Live PDF preview** is provided by LaTeX Workshop via `latexmk`
+- **[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)** — live PDF preview and `tex-fmt` format on save
+- **[direnv](https://marketplace.visualstudio.com/items?itemName=mkhl.direnv)** — automatically loads the Nix dev shell so VSCode tooling finds `latexmk`, `pdflatex`, and `tex-fmt`

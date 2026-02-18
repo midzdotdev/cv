@@ -1,3 +1,6 @@
+# direnv / nix-direnv cache
+.direnv/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
