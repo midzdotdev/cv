@@ -110,17 +110,6 @@
   \par\kern\topsep
 } % new environment for the header
 
-\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
-  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-    \put(
-      \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
-      \LenToUnit{\paperheight-1.0 cm}
-    ){\vtop{{\null}\makebox[0pt][c]{
-          \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
-    }}}%
-  }%
-}%
-
 % save the original href command in a new command:
 \let\hrefWithoutArrow\href
 
@@ -135,164 +124,37 @@
 \newsavebox\ANDbox
 \sbox\ANDbox{$|$}
 
-\begin{header}
-  \fontsize{25 pt}{25 pt}\selectfont James Middleton
+\input{sections/header}
 
-  \vspace{5 pt}
-
-  \normalsize
-  \mbox{Nottingham, UK}%
-  \kern 5.0 pt%
-  \AND%
-  \kern 5.0 pt%
-  \mbox{\hrefWithoutArrow{mailto:james@midz.dev}{james@midz.dev}}%
-  \kern 5.0 pt%
-  \AND%
-  \kern 5.0 pt%
-  \mbox{\hrefWithoutArrow{tel:+447512253451}{07512 253451}}%
-  \kern 5.0 pt%
-  \AND%
-  \kern 5.0 pt%
-  \mbox{\hrefWithoutArrow{https://linkedin.com/in/midzdotdev}{linkedin:midzdotdev}}%
-  \kern 5.0 pt%
-  \AND%
-  \kern 5.0 pt%
-  \mbox{\hrefWithoutArrow{https://github.com/midzdotdev}{github:midzdotdev}}%
-\end{header}
-
-\vspace{10 pt}
-
-\begin{onecolentry}
-  Applications Engineer, DevOps enthusiast and TypeScript wizard. A full-stack developer equipped with a growth mindset and a personable demeanor. Seeking a new opportunity to deliver reliable, intuitive systems.
-\end{onecolentry}
+\input{sections/skills}
 
 \section{Experience}
 
-% Low6
-\begin{twocolentry}{
-    Dec 2024 -- Present
-  }
-  \textbf{Software Engineer}, \href{https://low6.com}{Low6} -- Remote
-\end{twocolentry}
-
-\vspace{0.10 cm}
-\begin{onecolentry}
-  Tech: React, NodeJS, Fastify, MSSQL, PostgreSQL, GitHub Actions, OpenTofu, Azure
-
-  \begin{highlights}
-  \item Scaled BBC Champions League Squares to serve 50,000+ users per minute using stored procedures and Redis
-  \item Simplified frontend builds by implicitly loading environment variables from GitHub deployment environments
-  \item Used OpenTofu to manage Azure infrastructure for greenfield and brownfield projects
-  \end{highlights}
-\end{onecolentry}
+\input{sections/experience/2025-10-gelt}
 
 \vspace{0.2 cm}
 
-% IMG ARENA
-\begin{twocolentry}{
-    Nov 2021 -- Jul 2024
-  }
-  \textbf{Software Engineer}, \href{https://imgarena.com}{IMG ARENA} -- Remote
-\end{twocolentry}
-
-\vspace{0.10 cm}
-\begin{onecolentry}
-  Tech: React, GraphQL, Cypress, RxJS, NodeJS, GitHub Actions, Kubernetes, Terraform, AWS
-  \begin{highlights}
-  \item Co-architected the department's monorepo to improve code sharing and cross-team collaboration
-  \item Worked within a team to extend Golf to support DP World Tour and LPGA
-  \item Enhanced white-label theming approach on Golf, enabling a partnership with FanDuel while maintaining backwards compatibility for 70+ existing client themes
-  \item Deployed a CSP for 4 frontends to mitigate XSS threats, iterating on violations reported to DataDog
-  \end{highlights}
-\end{onecolentry}
+\input{sections/experience/2024-12-low6}
 
 \vspace{0.2 cm}
 
-% Scrolller
-\begin{twocolentry}{
-    Jun 2021 -- Sep 2021
-  }
-  \textbf{Software Engineer (Contractor)}, \href{https://scrolller.com}{Scrolller} -- Remote
-\end{twocolentry}
-
-\vspace{0.10 cm}
-\begin{onecolentry}
-  Tech: React, MobX, GraphQL, Kotlin, GitHub, GCP
-  \begin{highlights}
-  \item Boosted new subscription revenue by 30\% through strategic UI improvements
-  \item Collaborated in a startup environment to grow revenue and reach
-  \end{highlights}
-\end{onecolentry}
+\input{sections/experience/2021-11-img-arena}
 
 \vspace{0.2 cm}
 
-% Community Brands
-\begin{twocolentry}{
-    Dec 2020 -- Jun 2021
-  }
-  \textbf{Junior Software Developer}, \href{https://venturedsolutions.co.uk}{Community Brands UK} -- Remote
-\end{twocolentry}
-
-\vspace{0.10 cm}
-\begin{onecolentry}
-  Tech: React, C\#.NET, Pascal, Microsoft SQL Server, Azure Cosmos DB
-  \begin{highlights}
-  \item Created a system health-check dashboard using React, C\#.NET and Azure Cosmos DB
-  \item Developed SQL scripts to ingest school data with a normalised schema
-  \item Maintained the school data sync engine, "Xporter", in Pascal and C\#
-  \end{highlights}
-\end{onecolentry}
+\input{sections/experience/2021-06-scrolller}
 
 \vspace{0.2 cm}
 
-% ProVQ
-\begin{twocolentry}{
-    Jan 2019 -- Apr 2019
-  }
-  \textbf{Solutions Engineer (Contractor)}, \href{https://provq.com}{ProVQ} -- Shrewsbury, UK
-\end{twocolentry}
+\input{sections/experience/2020-12-community-brands}
 
-\vspace{0.10 cm}
-\begin{onecolentry}
-  Tech: VueJS, BootstrapVue, NodeJS, FeathersJS, MongoDB, PM2, VPS
-  \begin{highlights}
-  \item Designed and developed an apprentice screening platform, replacing an expensive paper-based process
-  \item Exposed an admin portal to modify assessments, view applicant details and interpret testing effectiveness
-  \item Achieved, at peak, a 500\% increase in processed applications and 150\% increase in successful applicants
-  \end{highlights}
-\end{onecolentry}
+\vspace{0.2 cm}
 
-\section{Education}
+\input{sections/experience/2019-01-provq}
 
-\begin{twocolentry}{
-    Oct 2016 -- Jul 2020
-  }
-  \textbf{\href{https://www.lboro.ac.uk}{Loughborough University}}, Computer Science BSc (Hons)
-\end{twocolentry}
+\input{sections/education}
 
-\vspace{0.10 cm}
-\begin{onecolentry}
-  \begin{highlights}
-  \item Rewarded Diploma in Professional Studies (DPS) for the successful ProVQ project
-  \item Mentored peers for courseworks and coding in Python, Java, JavaScript and PHP
-  \end{highlights}
-\end{onecolentry}
-
-\section{Projects}
-
-\begin{twocolentry}{
-    \href{https://github.com/midzdotdev/sykes-owner-calendar}{github:midzdotdev/sykes-owner-calendar}
-  }
-  \textbf{Sykes Cottages Owner Calendar}
-\end{twocolentry}
-
-\vspace{0.10 cm}
-\begin{onecolentry}
-  \begin{highlights}
-  \item Developed an iCal server for \href{https://www.sykescottages.co.uk/}{Sykes Cottages} owners to view their property bookings
-  \item Authenticated and scraped data using Cheerio, deployed to Vercel serverless functions
-  \end{highlights}
-\end{onecolentry}
+\input{sections/projects}
 
 \cfoot{
   \small
