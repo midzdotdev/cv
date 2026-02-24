@@ -16,8 +16,7 @@ sections/
     2020-12-community-brands.tex
     2021-06-scrolller.tex
     2021-11-img-arena.tex
-    2024-12-low6.tex
-    2025-10-gelt.tex                  <- newest role last
+    2024-12-low6.tex                  <- newest role last
   education.tex
   projects.tex
 ```
