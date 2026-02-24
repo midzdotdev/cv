@@ -21,7 +21,6 @@
         enumitem
         titlesec
         needspace
-        paracol
         changepage
         fancyhdr
         bookmark
